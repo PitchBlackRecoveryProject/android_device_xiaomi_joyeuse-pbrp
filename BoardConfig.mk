@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+#DEVICE_PATH := device/xiaomi/joyeuse
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -73,7 +75,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 #TARGET_USE_SDCLANG := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := curtana
+TARGET_OTA_ASSERT_DEVICE := joyeuse
 
 # Avb
 BOARD_AVB_ENABLE := true
@@ -132,6 +134,7 @@ TW_H_OFFSET := -86
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
-TW_EXCLUDE_TWRPAPP := true
+#TW_EXCLUDE_TWRPAPP := true
 TW_NO_SCREEN_BLANK := true
 PLATFORM_VERSION := 16.1.0
+TW_DEVICE_VERSION := AncientFamily
