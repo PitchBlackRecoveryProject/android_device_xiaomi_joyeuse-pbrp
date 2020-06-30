@@ -9,6 +9,7 @@ jobs:
       MAINTAINER: 'PBRP Team'
       VENDOR: 'xiaomi'
       CODENAME: 'joyeuse'
+      BUILD_LUNCH: 'omni_joyeuse-eng'
       TEST_BUILD: 'true'
       CHANGELOG: |
         - Initial Build
