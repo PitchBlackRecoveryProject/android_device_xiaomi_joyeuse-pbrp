@@ -26,8 +26,7 @@ workflows:
     jobs:
       build:
         resource_class: large
-      - build:
-          filters:
-            branches:
-              only: 'android-10.0'
-          context: org-global
+        filters:
+          branches:
+            only: 'android-10.0'
+        context: org-global
