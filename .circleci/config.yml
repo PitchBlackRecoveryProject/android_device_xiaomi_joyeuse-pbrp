@@ -25,6 +25,7 @@ workflows:
   build_and_test:
     jobs:
       - build:
+          resource_class: large
           filters:
             branches:
               only: 'android-10.0'
