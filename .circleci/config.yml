@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: fr3akyphantom/droid-builder:latest
     environment:
-      MANIFEST_BRANCH: 'android-9.0'
-      VERSION: '2.9.1'
+      MANIFEST_BRANCH: 'android-10.0'
+      VERSION: '2.9.1-test'
       MAINTAINER: 'PBRP Team'
       VENDOR: 'xiaomi'
       CODENAME: 'joyeuse'
@@ -26,5 +26,5 @@ workflows:
       - build:
           filters:
             branches:
-              only: 'android-9.0'
+              only: 'android-10.0'
           context: org-global
