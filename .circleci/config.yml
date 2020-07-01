@@ -1,0 +1,32 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: fr3akyphantom/droid-builder:latest
+    environment:
+      MANIFEST_BRANCH: 'android-10.0'
+      VERSION: '2.9.1-test'
+      MAINTAINER: 'PBRP Team'
+      VENDOR: 'xiaomi'
+      CODENAME: 'joyeuse'
+      BUILD_LUNCH: 'omni_joyeuse-eng'
+      TEST_BUILD: 'true'
+      CHANGELOG: |
+        - Initial Build
+    working_directory: /home/builder/pitchblack
+    steps:
+      - run:
+          name: AIO Build
+          command: |
+            wget -q https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_pb/pb/build.sh
+            source build.sh
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      build:
+        resource_class: large
+        filters:
+          branches:
+            only: 'android-10.0'
+        context: org-global
