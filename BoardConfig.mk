@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-#DEVICE_PATH := device/xiaomi/joyeuse
+DEVICE_PATH := device/xiaomi/joyeuse
 
 # Architecture
 TARGET_ARCH := arm64
