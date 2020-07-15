@@ -13,7 +13,7 @@ jobs:
       TEST_BUILD: 'true'
       EXTRA_CMD: "rm -rf build/soong && git clone https://github.com/PitchBlackRecoveryProject/android_build_soong -b android-10-fixes build/soong && rm -rf vendor/pb && git clone https://github.com/PitchBlackRecoveryProject/vendor_pb -b pb-10.0 vendor/pb"
       CHANGELOG: |
-        - Initial Build
+        - Initial Test Build
     working_directory: /home/builder/pitchblack
     steps:
       - run:
