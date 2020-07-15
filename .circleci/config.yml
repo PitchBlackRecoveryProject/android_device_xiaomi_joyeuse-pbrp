@@ -30,8 +30,3 @@ workflows:
             branches:
               only: 'a-10.0-fixes'
           context: org-global
-          deploy-job:
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "	6a:76:f9:8b:3e:bb:c4:66:d1:78:c9:ee:0b:01:87:92"
