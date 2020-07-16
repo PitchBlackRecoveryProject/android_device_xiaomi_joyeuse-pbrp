@@ -16,6 +16,7 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := joyeuse
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/joyeuse
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)

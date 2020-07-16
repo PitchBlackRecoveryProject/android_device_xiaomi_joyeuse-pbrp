@@ -4,9 +4,9 @@
 
 # mount point  fstype  device                             device2                flags
 
-system		/system			ext4		logical
-vendor		/vendor			ext4		display="Vendor";logical
-product		/product		ext4		display="Product";logical
+system		/system			ext4		
+vendor		/vendor			ext4		display="Vendor"
+product		/product		ext4		display="Product"
 /cache         ext4    /dev/block/bootdevice/by-name/cache
 #/metadata      ext4    /dev/block/bootdevice/by-name/metadata                    flags=display="Metadata";backup=1
 
