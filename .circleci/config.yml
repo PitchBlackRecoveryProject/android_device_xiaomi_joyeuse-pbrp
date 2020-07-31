@@ -11,8 +11,9 @@ jobs:
       CODENAME: 'joyeuse'
       BUILD_LUNCH: 'omni_joyeuse-eng'
       TEST_BUILD: 'true'
+      EXTRA_CMD: "rm -rf build/soong && git clone https://github.com/PitchBlackRecoveryProject/android_build_soong -b android-10-fixes build/soong && rm -rf vendor/pb && git clone https://github.com/PitchBlackRecoveryProject/vendor_pb -b pb-10.0 vendor/pb"
       CHANGELOG: |
-        - Initial Build
+        - Initial Test Build
     working_directory: /home/builder/pitchblack
     steps:
       - run:
@@ -21,12 +22,11 @@ jobs:
             wget -q https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_pb/pb/build.sh
             source build.sh
 workflows:
-  version: 2.1
+  version: 2
   build_and_test:
     jobs:
-      build:
-        resource_class: large
-        filters:
-          branches:
-            only: 'android-10.0'
-        context: org-global
+      - build:
+          filters:
+            branches:
+              only: 'a-10.0-fixes'
+          context: org-global
