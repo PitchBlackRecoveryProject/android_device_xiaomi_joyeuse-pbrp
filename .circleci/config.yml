@@ -23,7 +23,7 @@ jobs:
       - run:
           name: "ALL IN REMOTE"
           command: |
-            wget -q https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_utils/pb/remote_build.sh
+            wget -q https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_utils/Tess/remote_build.sh
             source remote_build.sh
 workflows:
   version: 2
