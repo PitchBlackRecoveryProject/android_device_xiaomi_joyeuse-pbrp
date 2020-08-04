@@ -5,7 +5,7 @@ jobs:
       - image: fr3akyphantom/droid-runner:latest
     environment:
       MANIFEST_BRANCH: 'android-10.0'
-      VERSION: '3.0.0-test'
+      VERSION: '3.0.05-test'
       MAINTAINER: "PBRP Team"
       VENDOR: 'xiaomi'
       CODENAME: 'joyeuse'
@@ -93,15 +93,14 @@ jobs:
             
             echo -e "Total Number of CPU Threads Used - " && nproc --all
             
-            cd ${DIR}/android
             mkdir upload
             
             echo "Ready to Deploy"
-            export TEST_BUILDFILE="out/target/product/${CODENAME}/PitchBlack*-UNOFFICIAL.zip"
+            export TEST_BUILDFILE="out/target/product/${CODENAME}/PBRP*-UNOFFICIAL.zip"
             export TEST_BUILDIMG="out/target/product/${CODENAME}/recovery.img"
 
             echo "Got the Unofficial Build: $TEST_BUILDFILE"
-            cp ${TEST_BUILDFILE} ${TEST_BUILDFILE} ${DIR}/upload/
+            cp ${TEST_BUILDFILE} ${TEST_BUILDFILE} upload/
             # release
             ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -n "Test Release for $(echo $CODENAME)" -b "PBRP $(echo $VERSION)" -c ${CIRCLE_SHA1} -delete ${VERSION}-test ${DIR}/upload
             
