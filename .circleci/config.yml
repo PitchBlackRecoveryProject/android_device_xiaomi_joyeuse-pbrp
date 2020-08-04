@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: fr3akyphantom/alpine-docker-runner:latest
+      - image: fr3akyphantom/droid-runner:latest
     environment:
       MANIFEST_BRANCH: 'android-10.0'
       VERSION: '3.0.0-test'
