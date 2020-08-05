@@ -23,8 +23,14 @@ jobs:
       - run:
           name: "ALL IN REMOTE"
           command: |
-            wget -q https://raw.githubusercontent.com/imranpopz/vendor_utils/pb/remote_build.sh
-            source remote_build.sh
+            echo "Ready to Deploy"
+            export TEST_BUILDFILE="$(find $(pwd)/out/target/product/${CODENAME}/PBRP*-UNOFFICIAL.zip 2>/dev/null)"
+            export BUILDFILE="$(find $(pwd)/out/target/product/${CODENAME}/PBRP*-OFFICIAL.zip 2>/dev/null)"
+            export BUILD_FILE_TAR="$(find $(pwd)/out/target/product/${CODENAME}/*.tar 2>/dev/null)"
+            export UPLOAD_PATH="$(pwd)/out/target/product/${CODENAME}/upload/"
+            mkdir ${UPLOAD_PATH}
+           # wget -q https://raw.githubusercontent.com/imranpopz/vendor_utils/pb/remote_build.sh
+           # source remote_build.sh
 workflows:
   version: 2
   remote_builder:
