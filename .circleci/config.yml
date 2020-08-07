@@ -41,7 +41,7 @@ jobs:
               -v "/home/builder/.ccache:/srv/ccache:rw" \
               --workdir /home/builder/ \
               fr3akyphantom/droid-builder:edge bash \<< EOF
-            curl -sL https://gist.github.com/rokibhasansagar/6177067d1f610431ab4f419db86a2b4b/raw/build.remote.sh -o build.sh
+            curl -sL https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_utils/Tess/remote_build.sh -o build.sh
             source build.sh
             EOF
 workflows:
