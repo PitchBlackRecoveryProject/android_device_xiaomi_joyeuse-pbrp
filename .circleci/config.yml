@@ -13,6 +13,8 @@ jobs:
       BUILD_LUNCH: 'omni_joyeuse-eng'
       FLAVOR: "eng"
       TEST_BUILD: 'true'
+      USE_SECRET_BOOTABLE: 'true'
+      SECRET_BR: 'android-10.0'
       #EXTRA_CMD: "rm -rf build/soong && git clone https://github.com/PitchBlackRecoveryProject/android_build_soong -b android-10-fixes build/soong && rm -rf vendor/pb && git clone https://github.com/PitchBlackRecoveryProject/vendor_pb -b pb-10.0 vendor/pb"
       CHANGELOG: |
          Initial Test Build
@@ -32,5 +34,5 @@ workflows:
       - build:
           filters:
             branches:
-              only: 'android-10.0'
+              only: 'test'
           context: org-global
